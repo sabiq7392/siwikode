@@ -1,0 +1,130 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap')
+$primaryColor: #555ca8
+$background: #555ca8
+$backgroundForIcon: rgba(#555ca8, 0.2)
+$fontBlack: rgba(#333, 0.9)
+$myshadow: 0px 1px 3px 0px rgba(0,0,0,0.10)
+$shadow-center: drop-shadow(0px 0px 5px rgba(0, 0, 0, 0.05))
+$shadow-bottom: drop-shadow(5px 2px 5px rgba(0, 0, 0, 0.05))
+$shadow-right: drop-shadow(2px 0px 5px rgba(0, 0, 0, 0.05))
+$shadowFloatingElement: 0px 0px 4px 0px rgba(0,0,0,0.35)
+$debug: 1px solid red
+$gapInput: 5px
+$gapElement: 10px
+$gapElementBig: 20px
+$radiusElement: 5px
+$paddingInput: 0 1.3rem
+$paddingElement: 2rem 
+$paddingForm: 3rem
+$paddingContainer: 5rem
+$borderBottomWhite: 1px solid rgba(#fff, 0.1)
+$borderBottomBlack: 1px solid #ececec
+$paragraphColor: rgba(#333, 0.9)
+$myBackground: #f7f7f7
+
+/* width */
+::-webkit-scrollbar 
+    width: 8px
+    height: 8px
+
+/* Track */
+::-webkit-scrollbar-track 
+    // background: #f0f0f0
+
+/* Handle */
+::-webkit-scrollbar-thumb 
+    background: rgba($primaryColor, 0.5)
+    border-radius: 8px
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover 
+    background: rgba($primaryColor, 0.8)
+
+// SCROLLBAR FOR MOZILLA
+html, .wisataBody, .sidebarWrapper
+    overflow-y: auto
+    scrollbar-color:  rgba($primaryColor, 0.5) #fff
+    scrollbar-width: thin
+
+*
+    
+    padding: 0
+    margin: 0
+    line-height: 185%
+    box-sizing: border-box!important
+    font-family: 'Poppins', sans-serif
+
+h1,h2,h3,h4,h5,h6,p
+    margin-bottom: 0
+
+
+/// =========== MIXIN ============= ///
+@mixin absoluteCenterXY()
+    position: absolute
+    left: 50%
+    top: 50%
+    transform: translate(-50%,-50%)
+
+@mixin absoluteCenterX()
+    position: absolute
+    
+@mixin displayCenter($display)
+    display: $display
+    @if $display == grid
+        place-items: center
+    @else if $display == flex
+        justify-content: center
+        align-items: center
+
+@mixin displayVerticalCenter($display)
+    display: $display
+    align-items: center
+    
+@mixin displayGap($display, $gap)
+    display: $display
+    grid-gap: $gap
+
+@mixin widthHeight($width, $height)
+    width: $width
+    height: $height
+    
+@mixin fontSizeWeightColor($size, $weight, $color)
+    font-size: $size
+    font-weight: $weight
+    color: $color
+
+@mixin paddingBorderRadius($padding, $borderRadius)
+    padding: $padding
+    border-radius: $borderRadius
+    @if $borderRadius == circle 
+        border-radius: 50%
+
+@mixin whatPosition($position, $where)
+    position: $position
+    @if $where == endOfTopRightCorner
+        top: 0
+        right: 0
+    @else if $where == endOfTopLeftCorner
+        top: 0
+        left: 0
+
+@mixin opacityZ-Index($opacity, $z-index)
+    opacity: $opacity
+    z-index: $z-index
+
+@mixin gridTemplateGap($whatTemplate, $grid, $gap)
+    grid-gap: $gap
+    @if $whatTemplate == row    
+        grid-template-rows: $grid
+    @if $whatTemplate == column
+        grid-template-columns: $grid
+
+@mixin displayAlignCenter($display)
+    display: $display
+    align-items: center
+
+
+// =============== Key Frames ================
+
+
+

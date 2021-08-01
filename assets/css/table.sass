@@ -1,0 +1,63 @@
+@import 'mixin.sass'
+
+.table-wrapper
+    @include paddingBorderRadius($paddingElement, $radiusElement)
+    background: white
+    // filter: $shadow-center
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.05)
+    width: 100%
+    overflow-x: auto
+    // overflow-y: auto
+    // max-height: 100vh
+
+.tableHeader
+    display: flex
+
+table
+    // min-height: 500px
+    height: fit-content
+
+    th
+        background: $backgroundForIcon
+
+    td, details, th
+        vertical-align: top!important
+        font-size: 14px!important
+
+    td, th
+        white-space: pre
+        padding: 10px
+
+    th:last-child, th:first-child
+        text-align: center
+
+    td:last-child,
+        @include displayGap(flex, $gapElement )
+        i
+            color: #333
+
+// ================= DETAIL TABLE
+.detailTableContainer
+    @include paddingBorderRadius($paddingElement , $radiusElement)
+    background: white
+    filter: $shadow-center
+    width: clamp(200px, 100%, 700px)
+    .detailTable
+        display: grid
+    .detailTableRow
+        background: white
+        border-bottom: $borderBottomBlack
+        display: grid
+        @include gridTemplateGap(column, 20% 80% , $gapElementBig)
+        &:hover
+            filter: brightness(95%)
+
+        div
+            vertical-align: top!important
+            padding: 10px $paddingElement
+
+        div:first-child
+            font-weight: 600
+
+.noWhiteSpace
+    white-space: normal!important

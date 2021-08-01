@@ -1,0 +1,230 @@
+@import 'mixin.sass'
+@import 'animation.sass'
+
+html 
+    scroll-behavior: smooth
+
+input,select, textarea
+    font-size: 14px!important
+    transition: 200ms
+
+input[type="text"], 
+input[type="number"], 
+input[type="email"], 
+input[type="password"], 
+input[type="submit"],
+a.buttonCancelForm, select
+    @include widthHeight(100%, 40px!important)
+    @include paddingBorderRadius($paddingInput , $radiusElement)
+
+input::placeholder 
+    font-size: 14px
+
+input[type="submit"] 
+    @include fontSizeWeightColor(false, 500 , white)
+    transition: 200ms
+    background: $primaryColor!important
+    &:hover 
+        filter: brightness(95%)
+        box-shadow: $myshadow
+        transform: translateY(-2px)
+
+label.ourLabel
+    @include fontSizeWeightColor(14px , 600 , $fontBlack)
+    position: absolute
+    top: 9px
+    left: 1.3rem
+    transition: 200ms
+    cursor: auto
+    z-index: 5
+
+label.labelMovingTop, label.selectLabel
+    @include paddingBorderRadius(0 10px , $radiusElement)
+    transform: translateY(-22px) translateX(-10px)
+    font-size: 12px!important
+    background-color: rgba(#fff, 1)
+    cursor: context-menu 
+
+label.ratingLabel 
+    @include fontSizeWeightColor(14px , 600 , $fontBlack)
+
+form 
+    @include widthHeight(400px ,false )
+    @include paddingBorderRadius($paddingForm, $radiusElement)
+    background: $myBackground
+    filter: $shadow-center
+
+form > .container-input 
+    @include displayGap(grid , $gapInput)
+    p
+        margin-top: 15px 
+        font-size: 12px
+    a.linkSignUp
+        color: $primaryColor
+
+main > form
+    width: 100%
+
+    
+small 
+    padding: 0 1.3rem
+
+legend
+    @include fontSizeWeightColor(36px, bold!important , $primaryColor)
+    text-align: center
+
+.password // Input Password With Show Hide Password
+    display: flex
+    align-items: center
+    label 
+        font-size: 12px
+
+    .checkbox
+        input[type="checkbox"], .mata, .buta
+            position: absolute
+
+        input[type="checkbox"]
+            @include opacityZ-Index(0, 1)
+            transform: translateY(-5px) translateX(-30px)
+
+        .mata, .buta
+            z-index: 0 
+            transition: 200ms
+            transform: translateY(-6px) translateX(-33px)
+        .mata
+            opacity: 1
+                            
+        .buta
+            opacity: 0
+
+div.inputUploadPhotoProfile
+    @include displayCenter(grid)
+    position: relative
+    div#imageInForm
+        position: relative
+        padding: $paddingElement
+        transition: 200ms
+
+    img
+        width: 200px
+        height: 200px
+        border-radius: 100%
+        object-fit: cover
+        object-position: top
+        box-shadow: $myshadow
+        transition: 200ms
+
+    img.opacityAndFilterForImageInput
+        opacity: 1!important
+
+    input.imageInput
+        @include absoluteCenterXY()
+        width: 200px
+        opacity: 0
+        cursor: pointer!important
+
+    div.iconCamera
+        @include displayCenter(grid)
+        @include widthHeight(40px, 40px )
+        box-shadow: $myshadow
+        background: $primaryColor
+        border-radius: 50%
+        position: absolute
+        bottom: 10px
+        left: 58%
+        z-index: 10
+        cursor: pointer
+        
+    svg.bi-camera-fill
+        cursor: pointer
+
+div.buttonFormOneColumn
+    @include displayCenter(grid)
+    grid-gap: $gapInput
+div.buttonForm
+    @include displayCenter(grid)
+    @include gridTemplateGap(column, 1fr 1fr, $gapInput)
+
+a.myButtonSecondary
+    @include fontSizeWeightColor(16px, 400, $primaryColor)
+    border: 1px solid $primaryColor
+
+a.buttonCancelForm, a.buttonJustBorder // Berada di halaman Registrasi
+    @include displayCenter(grid)
+    @include fontSizeWeightColor(14px, 500, $primaryColor)
+    @include paddingBorderRadius($paddingInput , $radiusElement)
+    border: 1px solid $primaryColor
+    transition: 200ms
+
+a.buttonCancelForm:hover, a.myButton:hover a.btn
+    @include fontSizeWeightColor(false , 500 , white)
+    background: $primaryColor!important
+    filter: brightness(95%)
+    box-shadow: $myshadow
+    transform: translateY(-2px)
+    
+// ============= Form Floating Element
+.floatingElement
+    @include displayCenter(grid)
+    @include widthHeight(100vw, 100vh )
+    position: fixed
+    top: 0
+    left: 0
+    background: rgba(black, 0.4)
+    z-index: 10
+    display: none
+
+.formCreateContainer
+    background: $myBackground
+    height: fit-content
+    max-height: 70vh
+    overflow-y: auto 
+    position: relative
+    width: 40%
+    z-index: 11
+    
+
+.createButtonFloating
+    @include displayCenter(flex)
+    @include widthHeight(45px, 45px)
+    padding: 0 5px
+    grid-gap: $gapElement
+    border-radius: $radiusElement 
+    background: $primaryColor 
+    box-shadow: $shadowFloatingElement
+    position: fixed
+    top: 50%
+    transform: translate(0%,-50%)
+    right: 25px
+    z-index: 5
+    transition: width 400ms
+    i, p
+        color: #fff
+    i
+        transform: translateX(33px)
+        font-size: 22px
+    p
+        font-size: 16px 
+        // transition: 200ms
+        // transition-delay: 200ms  
+        opacity: 0 
+
+.createButtonFloating:hover
+    width: 170px
+    cursor: pointer
+    filter: brightness(95%)
+    i
+        transform: translateX(0px)
+    p
+        opacity: 1
+// =============== Spawn Class
+.form-group
+    position: relative
+
+.form-control:focus 
+    border-color: $primaryColor
+    box-shadow: none!important
+    outline: 0 none
+
+.brightnessDown
+    filter: brightness(80%)!important

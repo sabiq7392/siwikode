@@ -1,0 +1,507 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+/* width */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+/* Track */
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: rgba(85, 92, 168, 0.5);
+  border-radius: 8px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(85, 92, 168, 0.8);
+}
+
+html, .wisataBody, .sidebarWrapper {
+  overflow-y: auto;
+  scrollbar-color: rgba(85, 92, 168, 0.5) #fff;
+  scrollbar-width: thin;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  line-height: 185%;
+  -webkit-box-sizing: border-box !important;
+          box-sizing: border-box !important;
+  font-family: 'Poppins', sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6, p {
+  margin-bottom: 0;
+}
+
+.btn-danger {
+  background: #F38BA0;
+  border-color: #F38BA0;
+}
+
+@-webkit-keyframes ourTeam {
+  0% {
+    bottom: -200px;
+    opacity: 0;
+  }
+  100% {
+    bottom: 0;
+    opacity: 1;
+  }
+}
+
+@keyframes ourTeam {
+  0% {
+    bottom: -200px;
+    opacity: 0;
+  }
+  100% {
+    bottom: 0;
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes sidebarIconRotate {
+  0% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+  100% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+}
+
+@keyframes sidebarIconRotate {
+  0% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+  100% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+}
+
+@-webkit-keyframes menuCreate {
+  0% {
+    -webkit-transform: translateX(500px);
+            transform: translateX(500px);
+  }
+  100% {
+    -webkit-transform: translateX(0px);
+            transform: translateX(0px);
+  }
+}
+
+@keyframes menuCreate {
+  0% {
+    -webkit-transform: translateX(500px);
+            transform: translateX(500px);
+  }
+  100% {
+    -webkit-transform: translateX(0px);
+            transform: translateX(0px);
+  }
+}
+
+@-webkit-keyframes loading {
+  0% {
+    width: 100vw;
+  }
+  100% {
+    width: 57vw;
+  }
+}
+
+@keyframes loading {
+  0% {
+    width: 100vw;
+  }
+  100% {
+    width: 57vw;
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+input, select, textarea {
+  font-size: 14px !important;
+  -webkit-transition: 200ms;
+  transition: 200ms;
+}
+
+input[type="text"],
+input[type="number"],
+input[type="email"],
+input[type="password"],
+input[type="submit"],
+a.buttonCancelForm, select {
+  width: 100%;
+  height: 40px !important;
+  padding: 0 1.3rem;
+  border-radius: 5px;
+}
+
+input::-webkit-input-placeholder {
+  font-size: 14px;
+}
+
+input:-ms-input-placeholder {
+  font-size: 14px;
+}
+
+input::-ms-input-placeholder {
+  font-size: 14px;
+}
+
+input::placeholder {
+  font-size: 14px;
+}
+
+input[type="submit"] {
+  font-size: false;
+  font-weight: 500;
+  color: white;
+  -webkit-transition: 200ms;
+  transition: 200ms;
+  background: #555ca8 !important;
+}
+
+input[type="submit"]:hover {
+  -webkit-filter: brightness(95%);
+          filter: brightness(95%);
+  -webkit-box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.1);
+          box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.1);
+  -webkit-transform: translateY(-2px);
+          transform: translateY(-2px);
+}
+
+label.ourLabel {
+  font-size: 14px;
+  font-weight: 600;
+  color: rgba(51, 51, 51, 0.9);
+  position: absolute;
+  top: 9px;
+  left: 1.3rem;
+  -webkit-transition: 200ms;
+  transition: 200ms;
+  cursor: auto;
+  z-index: 5;
+}
+
+label.labelMovingTop, label.selectLabel {
+  padding: 0 10px;
+  border-radius: 5px;
+  -webkit-transform: translateY(-22px) translateX(-10px);
+          transform: translateY(-22px) translateX(-10px);
+  font-size: 12px !important;
+  background-color: white;
+  cursor: context-menu;
+}
+
+label.ratingLabel {
+  font-size: 14px;
+  font-weight: 600;
+  color: rgba(51, 51, 51, 0.9);
+}
+
+form {
+  width: 400px;
+  height: false;
+  padding: 3rem;
+  border-radius: 5px;
+  background: #f7f7f7;
+  -webkit-filter: drop-shadow(0px 0px 5px rgba(0, 0, 0, 0.05));
+          filter: drop-shadow(0px 0px 5px rgba(0, 0, 0, 0.05));
+}
+
+form > .container-input {
+  display: -ms-grid;
+  display: grid;
+  grid-gap: 5px;
+}
+
+form > .container-input p {
+  margin-top: 15px;
+  font-size: 12px;
+}
+
+form > .container-input a.linkSignUp {
+  color: #555ca8;
+}
+
+main > form {
+  width: 100%;
+}
+
+small {
+  padding: 0 1.3rem;
+}
+
+legend {
+  font-size: 36px;
+  font-weight: bold !important;
+  color: #555ca8;
+  text-align: center;
+}
+
+.password {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.password label {
+  font-size: 12px;
+}
+
+.password .checkbox input[type="checkbox"], .password .checkbox .mata, .password .checkbox .buta {
+  position: absolute;
+}
+
+.password .checkbox input[type="checkbox"] {
+  opacity: 0;
+  z-index: 1;
+  -webkit-transform: translateY(-5px) translateX(-30px);
+          transform: translateY(-5px) translateX(-30px);
+}
+
+.password .checkbox .mata, .password .checkbox .buta {
+  z-index: 0;
+  -webkit-transition: 200ms;
+  transition: 200ms;
+  -webkit-transform: translateY(-6px) translateX(-33px);
+          transform: translateY(-6px) translateX(-33px);
+}
+
+.password .checkbox .mata {
+  opacity: 1;
+}
+
+.password .checkbox .buta {
+  opacity: 0;
+}
+
+div.inputUploadPhotoProfile {
+  display: -ms-grid;
+  display: grid;
+  place-items: center;
+  position: relative;
+}
+
+div.inputUploadPhotoProfile div#imageInForm {
+  position: relative;
+  padding: 2rem;
+  -webkit-transition: 200ms;
+  transition: 200ms;
+}
+
+div.inputUploadPhotoProfile img {
+  width: 200px;
+  height: 200px;
+  border-radius: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: top;
+     object-position: top;
+  -webkit-box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.1);
+          box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.1);
+  -webkit-transition: 200ms;
+  transition: 200ms;
+}
+
+div.inputUploadPhotoProfile img.opacityAndFilterForImageInput {
+  opacity: 1 !important;
+}
+
+div.inputUploadPhotoProfile input.imageInput {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  width: 200px;
+  opacity: 0;
+  cursor: pointer !important;
+}
+
+div.inputUploadPhotoProfile div.iconCamera {
+  display: -ms-grid;
+  display: grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  -webkit-box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.1);
+          box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.1);
+  background: #555ca8;
+  border-radius: 50%;
+  position: absolute;
+  bottom: 10px;
+  left: 58%;
+  z-index: 10;
+  cursor: pointer;
+}
+
+div.inputUploadPhotoProfile svg.bi-camera-fill {
+  cursor: pointer;
+}
+
+div.buttonFormOneColumn {
+  display: -ms-grid;
+  display: grid;
+  place-items: center;
+  grid-gap: 5px;
+}
+
+div.buttonForm {
+  display: -ms-grid;
+  display: grid;
+  place-items: center;
+  grid-gap: 5px;
+  -ms-grid-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
+}
+
+a.myButtonSecondary {
+  font-size: 16px;
+  font-weight: 400;
+  color: #555ca8;
+  border: 1px solid #555ca8;
+}
+
+a.buttonCancelForm, a.buttonJustBorder {
+  display: -ms-grid;
+  display: grid;
+  place-items: center;
+  font-size: 14px;
+  font-weight: 500;
+  color: #555ca8;
+  padding: 0 1.3rem;
+  border-radius: 5px;
+  border: 1px solid #555ca8;
+  -webkit-transition: 200ms;
+  transition: 200ms;
+}
+
+a.buttonCancelForm:hover, a.myButton:hover a.btn {
+  font-size: false;
+  font-weight: 500;
+  color: white;
+  background: #555ca8 !important;
+  -webkit-filter: brightness(95%);
+          filter: brightness(95%);
+  -webkit-box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.1);
+          box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.1);
+  -webkit-transform: translateY(-2px);
+          transform: translateY(-2px);
+}
+
+.floatingElement {
+  display: -ms-grid;
+  display: grid;
+  place-items: center;
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 10;
+  display: none;
+}
+
+.formCreateContainer {
+  background: #f7f7f7;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  max-height: 70vh;
+  overflow-y: auto;
+  position: relative;
+  width: 40%;
+  z-index: 11;
+}
+
+.createButtonFloating {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 45px;
+  height: 45px;
+  padding: 0 5px;
+  grid-gap: 10px;
+  border-radius: 5px;
+  background: #555ca8;
+  -webkit-box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.35);
+          box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.35);
+  position: fixed;
+  top: 50%;
+  -webkit-transform: translate(0%, -50%);
+          transform: translate(0%, -50%);
+  right: 25px;
+  z-index: 5;
+  -webkit-transition: width 400ms;
+  transition: width 400ms;
+}
+
+.createButtonFloating i, .createButtonFloating p {
+  color: #fff;
+}
+
+.createButtonFloating i {
+  -webkit-transform: translateX(33px);
+          transform: translateX(33px);
+  font-size: 22px;
+}
+
+.createButtonFloating p {
+  font-size: 16px;
+  opacity: 0;
+}
+
+.createButtonFloating:hover {
+  width: 170px;
+  cursor: pointer;
+  -webkit-filter: brightness(95%);
+          filter: brightness(95%);
+}
+
+.createButtonFloating:hover i {
+  -webkit-transform: translateX(0px);
+          transform: translateX(0px);
+}
+
+.createButtonFloating:hover p {
+  opacity: 1;
+}
+
+.form-group {
+  position: relative;
+}
+
+.form-control:focus {
+  border-color: #555ca8;
+  -webkit-box-shadow: none !important;
+          box-shadow: none !important;
+  outline: 0 none;
+}
+
+.brightnessDown {
+  -webkit-filter: brightness(80%) !important;
+          filter: brightness(80%) !important;
+}
+/*# sourceMappingURL=ourFormStyle.css.map */

@@ -1,0 +1,492 @@
+@import 'mixin.sass'
+@import 'animation.sass'
+@import 'ourFormStyle.sass'
+
+$sizeSidebar: 301px
+.btn-danger
+    background: #ff6b6b!important
+    border-color: #ff6b6b!important
+
+.btn-warning
+    background: #feca57!important
+    border-color: #feca57!important
+
+.btn-success
+    background: #1dd1a1!important
+    border-color: #1dd1a1!important
+
+html    
+    scroll-behavior: smooth
+    overflow-y: scroll!important
+    // overflow-x: hidden
+
+body
+    background: $myBackground
+    position: relative // Agar Footer Selalu dibawah
+    @include displayCenter(grid)
+
+#page-content-wrapper
+    @include displayCenter(grid)
+    min-height: 100vh
+    margin-left: 320px // from size of sidebar and add margin
+    margin-right: 25px // margin
+    // transition: margin-left 400ms ease-in-out
+
+#page-content-wrapper.toggled
+    margin: 0!important
+
+b
+    font-weight: 600
+
+a
+    text-decoration: none!important
+
+h3, p, h4, h6
+    color: $fontBlack
+
+h2
+    @include fontSizeWeightColor(36px , bold , #333)
+    text-align: left
+
+h3 
+    @include fontSizeWeightColor(20px, 600 , #333)
+
+h4
+    @include fontSizeWeightColor(16px, 400 , #b3b3b3)
+
+p, address
+    font-size: 15px
+    line-height: 175%
+
+// ========== HEADER ============
+aside.sidebarWrapper.toggled
+    transform: translateX(-301px) // 301px from size of sidebar
+
+aside.sidebarWrapper
+    @include whatPosition(fixed , $where: endOfTopLeftCorner)
+    background: $primaryColor
+    filter: $shadow-center
+    z-index: 6
+    padding: 0 20px
+    transition: transform 400ms
+    height: 100vh
+    overflow-y: auto 
+    width: 295px
+    // width: clamp(200px, 100%, 295px)
+    // width: 295px!important
+    .sidebar-heading
+        @include displayCenter(grid)
+        padding: 1rem 0
+        font-size: 1.2rem
+        margin-bottom: 10rem
+        border-bottom: $borderBottomWhite
+        
+        a
+            @include displayCenter(flex)
+            grid-gap: 15px
+            text-decoration: none
+            
+        i, span
+            @include fontSizeWeightColor(32px, bold , rgba(#fff, 1))
+            transition: 200ms
+    
+    .sidebar-heading:hover
+        i
+            animation: sidebarIconRotate 1s infinite
+            
+    .sidebar-link
+        @include displayCenter(grid)
+        grid-gap: $gapElementBig
+
+        div.titleOfMenu
+            color: rgba(#fff, 0.3)
+            font-size: 14px
+
+        div
+            width: 100%
+            @include paddingBorderRadius(0 0, $radiusElement)
+            transition: 200ms
+
+        a
+            @include displayGap(flex, 15px)
+            @include fontSizeWeightColor(20px , 400 , rgba(#fff, 0.5))
+            border: none!important
+            transition: 400ms
+            background: rgba($primaryColor, 0 )
+
+        span
+            @include fontSizeWeightColor(16px!important , 400, rgba(#fff, 0.5))
+            text-align: center
+            transition: 200ms
+
+        a.list-group-item
+            @include displayVerticalCenter(flex)
+            
+        div.menuSidebar:hover
+            background: rgba(#fff, 0.2)
+            a, span
+                color: rgba(#fff, 1)
+    
+#toggleButtonSidebar
+    @include widthHeight(45px, 45px)
+    @include displayCenter(grid)
+    position: fixed
+    background: $primaryColor
+    border-radius: 50%
+    left: 290px
+    top: 50%
+    z-index: 10
+    box-shadow: $shadowFloatingElement
+    padding: 0!important
+    transform: translate(-50%,-50%)
+    transition: 400ms
+    filter: $shadow-center
+    #toggleSidebarIcon
+        color: white
+        font-size: 32px
+        transform: rotate(-90deg) translateY(6px)
+        transition: transform 400ms
+        
+    #toggleSidebarIcon.toggled
+        transform: rotate(90deg) translateY(6px)
+
+#toggleButtonSidebar.toggled
+    left: 50px 
+
+// ============== Navbar =================    
+nav.navbar
+    @include whatPosition(fixed!important, $where: endOfTopRightCorner)
+    padding: 20px $paddingElement
+    width: 100%
+    z-index: 2
+    background: white
+    border-bottom: $borderBottomBlack
+
+    .menu-toggle
+        @include fontSizeWeightColor(32px, false, $primaryColor)
+        display: grid
+        background: white
+        i 
+            transition: 400ms
+
+    .welcome-user
+        span
+            color: $primaryColor
+            
+    .navbar-nav
+        @include displayCenter(flex)
+        grid-gap: 15px     
+        .nav-item
+            @include displayCenter(grid)
+            transition: 200ms
+        .nav-item:hover
+            background: rgba($primaryColor, 0.2)
+        
+        .nav-link 
+            @include displayCenter(grid)
+            @include fontSizeWeightColor(20px, false, $primaryColor )
+            
+
+    .userProfile
+        @include widthHeight(40px, 40px)
+        border-radius: 100%
+        background: rgba($primaryColor, 0.05)
+
+    .ourImage
+        img
+            border-radius: 100%
+            width: 40px
+            height: 40px
+            object-fit: cover
+            object-position: top
+
+.navbarDropdown
+    cursor: pointer
+    
+    .buttonNavbarDropdown
+        // @include displayCenter(grid)
+        @include widthHeight(40px, 40px)
+        padding: 0!important
+        transition: 200ms
+        i#iconNavbarDropdown
+            font-size: 32px
+            transform: rotate(180deg) translateY(5px)!important
+
+
+
+    .menuNavbarDropdown
+        @include displayGap(none, $gapElementBig)
+        @include opacityZ-Index(0, 0)
+        @include paddingBorderRadius($paddingElement, $radiusElement)
+        transition: 200ms
+        background: white
+        filter: $shadow-center
+        position: fixed
+        right: 30px
+        top: 78px
+        .dropdownItem
+            @include gridTemplateGap(column, 20% calc( 80% - 20px), $gapElementBig)
+            @include displayAlignCenter(grid)
+            .iconDropdownItem
+                @include displayCenter(grid)
+                @include widthHeight(50px, 50px)
+                background: rgba($primaryColor, 0.05)
+                border-radius: 100%
+                transition: 200ms
+                font-size: 20px
+
+        .dropdownItem:hover > .iconDropdownItem
+            background: rgba($primaryColor, 0.2)
+
+    a, p
+        @include fontSizeWeightColor(15px, 500, $primaryColor)
+        text-decoration: none
+        
+    i
+        color: $primaryColor
+        font-size: 20px
+
+// ================= FOOTER ==================
+footer
+    @include displayCenter(flex)
+    @include widthHeight(100%, 78px)
+    position: absolute
+    z-index: 0
+    bottom: 0
+    background: #fff
+    border-top: $borderBottomBlack
+    
+// ========== MAIN ============
+
+main.toggled
+    margin-left: 0
+
+main.wisata, main.testimoni, main.menuManagement
+
+main.noMax-width
+    max-width: none!important
+
+main.displayCenter 
+    place-items: center!important
+
+main
+    display: grid
+    padding: $paddingContainer $paddingElement
+    margin: 81px 0 78px 0 // from height of nav & footer
+    min-width: 600px
+    width: 100%
+    form
+        width: 100%
+
+    table
+        width: 100%
+
+main.menuManagement 
+    .menuEdit
+        width: 100%
+
+// ========== WISATA============
+main.admin, main.home
+    @include gridTemplateGap(row,auto auto auto, 100px)
+
+    div.shorting
+        display: flex
+        grid-gap: $gapElementBig
+        a
+            @include fontSizeWeightColor(16px, 500 , $primaryColor )
+
+        a:hover
+            text-decoration: underline!important
+
+
+    div.wisataRekreasi, div.wisataKuliner
+        display: grid
+        grid-gap: 30px
+        color: #333
+        width: 100%
+
+    div.containerWisata 
+        display: flex
+        flex-wrap: wrap
+        grid-gap: $gapElementBig
+
+    .wisataPreview
+        @include gridTemplateGap(row, 300px auto , false )
+        display: grid
+        border-radius: 2%
+        max-width: 300px
+        min-width: 280px
+        max-height: 550px
+        width: 100%
+        height: 100%
+        z-index: 1!important
+        background: white
+        filter: $shadow-center
+        // transition: transform 400ms
+    h1
+        @include fontSizeWeightColor(false, bold, #333 )
+        text-align: left
+
+    .wisataHeader
+        display: grid
+        @include gridTemplateGap(row, 75% 25%, false )
+        border-bottom: $borderBottomBlack
+        
+        .wisataImage 
+            @include widthHeight(100% , 100%)
+
+            img
+                @include widthHeight(100% , 100%)
+                border-top-left-radius: 2%
+                border-top-right-radius: 2%
+                object-fit: cover
+                object-position: center
+
+        .wisataName
+            @include widthHeight(100% , 100%)
+            display: grid
+            align-items: center
+            padding:  10px $paddingElement
+            h3
+                @include fontSizeWeightColor(25px, 600 , #333 )
+
+            p
+                font-weight: 500
+                color: rgba($primaryColor, 0.6)
+
+    .wisataBody
+        padding: $paddingElement
+        overflow-y: auto
+        address
+            color: $paragraphColor
+            span 
+                font-weight: 600
+        p
+            color: $paragraphColor
+            line-height: 200%
+
+        p.info
+
+// ========== CARD PREVIEW ============
+.userDetail
+    @include displayGap(grid, $gapElement)
+    @include paddingBorderRadius(2rem , $radiusElement)
+    width: 100%
+    z-index: 1!important
+    background: white
+    h3
+        font-weight: bold
+
+    .userImage, 
+    .userName, 
+    .userProfesi, 
+        @include displayCenter(grid)
+
+    .userImage  
+        @include widthHeight(100% , 100%)
+        img
+            @include widthHeight(200px , 200px)
+            @include paddingBorderRadius(none, circle)
+            object-fit: cover
+            object-position: top
+
+    .userEmail
+        @include paddingBorderRadius(0.5rem 1rem, $radiusElement)
+        background: white
+    
+    .userDescription, div.wisataDescription
+        p // automatic generate break line
+            white-space: pre-line
+
+        a
+            @include fontSizeWeightColor(14px, false , $primaryColor )
+            text-decoration: underline!important
+            &:hover
+                cursor: pointer
+
+.fa-camera
+    color: white
+
+// ========== OUR TEAM ============
+.ourTeams
+    @include displayGap(grid, false)
+    position: relative
+    text-align: center
+    ul
+        @include gridTemplateGap(column, 1fr 1fr 1fr, $gapElementBig)
+        @include displayCenter(grid)
+        position: relative
+        list-style-type: none
+        transition: 1s
+        animation: ourTeam 2s
+    
+    li
+        @include displayCenter(grid)
+        @include widthHeight(100%, 100% )
+        @include paddingBorderRadius($paddingElement, $radiusElement)
+        grid-gap: $gapElement
+        transition: 200ms
+        background: white
+        cursor: pointer
+        filter: $shadow-center
+        border-top: 4px solid white
+    
+    li:hover
+        border-top: 4px solid $primaryColor
+
+    img
+        width: 200px
+        height: 200px
+        border-radius: 50%
+        object-fit: cover
+        object-position: top
+
+    h3 
+        @include fontSizeWeightColor(18px, 600 , #333 )
+
+// =========== Spawn Class
+.yellow 
+    color: yellow!important
+
+.paddingContainer
+    padding: $paddingContainer
+
+.borderBottom
+    border-bottom: $borderBottomWhite
+
+.textUnderline
+    text-decoration: underline!important
+
+.d-none
+    display: none!important
+
+.d-grid
+    display: grid!important
+
+.animationFormCreate
+    animation: menuCreate 800ms
+
+.animationButtonNavbarDropdown
+    transform: rotate(-180deg)
+
+.navbarDropdownStyle
+    @include opacityZ-Index(1!important, 1!important)
+    display: grid!important
+    
+.width-100vw
+    width: calc( 100vw - 8px )!important
+
+.transition400ms
+    transition: 400ms
+
+.positionCreateButton
+    margin-left: auto
+    transform: translateX(-30px)
+
+.myButton, 
+    @include displayCenter(grid)
+    background: $primaryColor
+    @include fontSizeWeightColor(16px, 400 , white )
+    
+a.myButton
+    transition: 200ms

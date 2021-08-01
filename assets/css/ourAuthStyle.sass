@@ -1,0 +1,51 @@
+@import 'mixin.sass'
+@import 'animation.sass'
+
+h1
+    @include fontSizeWeightColor(54px, bold , white)
+    
+h2, legend
+    @include fontSizeWeightColor(36px, 600 , $primaryColor)
+    
+h4
+    color: rgba(255, 255, 255, 0.4)
+// ================================ Login Registrasi
+main 
+    .layout-left, .layout-right
+        @include displayCenter(grid)
+        height: 100vh
+        position: relative
+
+    .layout-left
+        background-color: $primaryColor
+        z-index: 2
+        animation: loading 1s cubic-bezier(.86,.46,.83,.67)
+        transition: animation 200ms
+        .logo
+            width: 130px
+
+        header
+            @include displayCenter(grid)
+            grid-gap: $gapElementBig
+            
+
+    .layout-right
+        z-index: 1
+    
+    .backgroundBanner
+        background: $primaryColor
+// ================================ SPAWN CLASS
+.d-none 
+    display: none!important
+
+// ============================= Media Screen
+@media screen and (max-width:767px)
+    .layout-left, .layout-right
+        height: 100vh!important
+
+    h1
+        @include fontSizeWeightColor(55px, bold , $primaryColor)
+        letter-spacing: 0.05em
+
+    h4
+        @include fontSizeWeightColor(21px, false , $fontBlack)
