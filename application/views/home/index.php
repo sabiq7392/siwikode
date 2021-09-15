@@ -1,6 +1,6 @@
 <main class="home ">
     <div class="shorting" id="shorting">
-        <a href="#" class="textUnderline">Show All</a>
+        <a href="#" class="backgroundShorting">Show All</a>
         <a href="#">Wisata Rekreasi</a>
         <a href="#">Wisata Kuliner</a>
     </div>

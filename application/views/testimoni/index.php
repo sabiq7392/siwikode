@@ -66,20 +66,20 @@
         </wisataCreate>
     </floatingElement>
 
-    <div class="table-responsive table-wrapper">
-        <section class="tableHeader">
+    <div class="table-wrapper">
+        <header class="tableHeader">
             <h2 class="text-left">Testimoni</h2>
-        </section>
-        <br />
-        <table class="table-bordered table-striped">
-            <thead class="text-top">
+        </header>
+        <br>
+        <table class="table-striped table-hover">
+            <thead class="tableHead">
                 <tr>
                     <th>No</th>
                     <th>Nama</th>
                     <th>Email</th>
-                    <th>Wisata</th>
+                    <th class="text-center">Wisata</th>
                     <th>Profesi</th>
-                    <th>Rating</th>
+                    <th class="text-center">Rating</th>
                     <th>Komentar</th>
                     <th>Action</th>
                 </tr>
@@ -89,17 +89,18 @@
                 foreach ($testimoni as $row) : ?>
                     <tr id="<?= $row->id ?>">
                         <td><?= $no ?></td>
-                        <td><?= $row->nama_testimoni ?></td>
-                        <td><?= $row->email ?></td>
-                        <td><?= $row->nama_wisata ?></td>
-                        <td><?= $row->nama_profesi ?></td>
+                        <td class="text-left"><?= $row->nama_testimoni ?></td>
+                        <td class="text-left"><?= $row->email ?></td>
+                        <td class="text-left"><?= $row->nama_wisata ?></td>
+                        <td class="text-center"><?= $row->nama_profesi ?></td>
                         <td><?= $row->rating ?></td>
                         <td>
                             <details><?= $row->komentar ?></details>
                         </td>
-                        <td>
-                            <a href="<?= base_url() ?>admin/edit_testimoni/<?= $row->id ?>" class="btn btn-warning">Edit</a>
-                            <a data-url="admin/delete_testimoni/" class="btn btn-danger delete">Delete</a>
+                        <td class="text-dark">
+                            <a href="<?= base_url() ?>admin/detail_wisata/<?= $row->id ?>" class="btn btn-success" title="detail"><i class="fas fa-eye"></i></a>
+                            <a href="<?= base_url() ?>admin/edit_wisata/<?= $row->id ?>" class="btn btn-warning" title="edit"><i class="fas fa-edit"></i></a>
+                            <a data-url="admin/delete_wisata/" class="btn btn-danger delete" title="delete"><i class="fas fa-trash"></i></a>
                         </td>
                     </tr>
                 <?php $no++;

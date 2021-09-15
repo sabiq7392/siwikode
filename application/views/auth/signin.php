@@ -27,18 +27,18 @@
                         <div class="form-group">
                             <label for="password" class="ourLabel labelMovingTop">Password</label> 
                             <div class="password">
-                                <input id="passwordLogin" name="password" type="password" class="form-control ourInput">
+                                <input id="password" name="password" type="password" class="form-control ourInput">
                                 <checkbox class="checkbox">
-                                    <input type="checkbox" id="showLogin">
-                                    <i class="fas fa-eye mata" id="mataLogin"></i> 
-                                    <i class="fas fa-eye-slash buta" id="butaLogin"></i>
+                                    <input type="checkbox" id="show">
+                                    <i class="fas fa-eye mata" id="mata"></i> 
+                                    <i class="fas fa-eye-slash buta" id="buta"></i>
                                 </checkbox>
                             </div>
                             <?= form_error('password', '<small class="text-danger">', '</small>') ?>
                         </div>
                         <!------------------>
                         <label class="ourLabel" for="repeat_password" hidden>Repeat Password</label> 
-                        <input id="repeatPasswordLogin" name="repeat_password" type="password" class="form-control ourInput" hidden>
+                        <input id="repeatPassword" name="repeat_password" type="password" class="form-control ourInput" hidden>
                         <!------------------>
                         <input type="submit" class="form-control kirim" value="Sign In">
                         <a href="<?=base_url('home')?>" class="btn buttonCancelForm">Cancel</a>

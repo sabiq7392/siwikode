@@ -1043,11 +1043,17 @@ main.admin div.shorting, main.home div.shorting {
 main.admin div.shorting a, main.home div.shorting a {
   font-size: 16px;
   font-weight: 500;
-  color: #555ca8;
+  color: rgba(51, 51, 51, 0.4);
+  border: 1px solid #ececec;
+  padding: 5px 2rem;
+  border-radius: 5px;
+  -webkit-transition: 200ms;
+  transition: 200ms;
 }
 
-main.admin div.shorting a:hover, main.home div.shorting a:hover {
-  text-decoration: underline !important;
+main.admin div.shorting a:not(.backgroundShorting):hover, main.home div.shorting a:not(.backgroundShorting):hover {
+  -webkit-box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.15);
+          box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.15);
 }
 
 main.admin div.wisataRekreasi, main.admin div.wisataKuliner, main.home div.wisataRekreasi, main.home div.wisataKuliner {
@@ -1071,14 +1077,14 @@ main.admin .wisataPreview, main.home .wisataPreview {
   grid-gap: false;
   -ms-grid-rows: 300px auto;
       grid-template-rows: 300px auto;
+  width: 100%;
+  height: 100%;
   display: -ms-grid;
   display: grid;
   border-radius: 2%;
   max-width: 300px;
   min-width: 280px;
   max-height: 550px;
-  width: 100%;
-  height: 100%;
   z-index: 1 !important;
   background: white;
   -webkit-filter: drop-shadow(0px 0px 5px rgba(0, 0, 0, 0.05));
@@ -1283,6 +1289,10 @@ main.admin .wisataBody p, main.home .wisataBody p {
   color: #333;
 }
 
+.yellow {
+  color: yellow !important;
+}
+
 .paddingContainer {
   padding: 5rem;
 }
@@ -1291,8 +1301,11 @@ main.admin .wisataBody p, main.home .wisataBody p {
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-.textUnderline {
-  text-decoration: underline !important;
+.backgroundShorting {
+  -webkit-box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.15);
+          box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.15);
+  color: #555ca8 !important;
+  font-weight: 500 !important;
 }
 
 .d-none {

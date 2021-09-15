@@ -1,19 +1,11 @@
 class Dom {
-    $id(element) {
-        return document.getElementById(element);
-    }
+    $id(element) {return document.getElementById(element)}
 
-    $class(element) {
-        return document.getElementsByClassName(element);
-    }
+    $class(element) {return document.getElementsByClassName(element)}
 
-    $tag(element) {
-        return document.getElementsByTagName(element);
-    }
+    $tag(element) {return document.getElementsByTagName(element)}
 
-    $(element) {
-        return document.querySelector(element);
-    }
+    $(element) {return document.querySelector(element)}
 
     /*
         DOM.id("shorting")
@@ -25,52 +17,53 @@ class Dom {
     */
 
     // --------------------------------------------------------
-
+    // == For a element & multiple class ==
     addClass(element, classList) {    
         for (let i in classList) {
             element.classList.add(classList[i], )
         }
-        // For a element & multiple class
-    }
-
-    addClassElements(element, classList) {
-        for (let i = 0; i < element.length; i++) {
-            element[i].classList.add(classList)
-        }
-        // For multiple elements & a class
     }
 
     removeClass(element, classList) {
         for (let i in classList) {
             element.classList.remove(classList[i], );
         }
-        // For a element & multiple class
-    }
-
-    removeClassElements(element, classList) {
-        for (let i = 0; i < element.length; i++) {
-            element[i].classList.remove(classList)
-        }
-        // For multiple elements & a class
     }
 
     toggleClass(element, classList) {
         for (let i in classList) {
             element.classList.toggle(classList[i], );
         }
-        // For a element & multiple class
-    }
-
-    toggleClassElements(element, classList) {
-        for (let i = 0; i < element.length; i++) {
-            element[i].classList.toggle(classList)
-        }
-        // For multiple elements & a class
     }
 
     containClass(element, classList) {
         for (let i in classList) {
-            element.classList.contains(classList[i], );
+            return element.classList.contains(classList[i], );
+        }
+    }
+
+    // == For multiple elements & a class ==
+    addClassElements(element, classList) {
+        for (let i in element) {
+            element[i].classList.add(classList)
+        }
+    }
+
+    removeClassElements(element, classList) {
+        for (let i in element) {
+            element[i].classList.remove(classList)
+        }
+    }
+
+    toggleClassElements(element, classList) {
+        for (let i in element) {
+            element[i].classList.toggle(classList)
+        }
+    }
+
+    containsClassElements(element, classList) {
+        for (let i in element) {
+            element[i].classList.contains(classList)
         }
     }
 
@@ -83,25 +76,83 @@ class Dom {
     */
 
     // --------------------------------------------------------
-    onClick(event) {
-        null.addEventListener("click", event);
+    onClick(element) {
+        switch (element.length) {
+            case 1:
+                document.addEventListener("click", element[0])
+                break;
+
+            case 2:
+                element[0].addEventListener("click", element[1])
+                break;
+
+            default:
+                element[0].addEventListener("click", element[1], element[2])
+                break
+        }
     }
 
-    onFocus(event) {
-        document.addEventListener("focus", event);
+    onFocus(element) {
+        switch (element.length) {
+            case 1:
+                document.addEventListener("focus", element[0])
+                break;
+
+            case 2:
+                element[0].addEventListener("focus", element[1])
+                break;
+
+            default:
+                element[0].addEventListener("focus", element[1], element[2])
+                break
+        }
     }
 
-    onBlur(event) {
-        document.addEventListener("blur", event);
+    onBlur(element) {
+        switch (element.length) {
+            case 1:
+                document.addEventListener("blur", element[0])
+                break;
+
+            case 2:
+                element[0].addEventListener("blur", element[1])
+                break;
+
+            default:
+                element[0].addEventListener("blur", element[1], element[2])
+                break
+        }
     }
 
-    onHover(event) {
-        document.addEventListener("mouseover", event);
+    onHover(element) {
+        switch (element.length) {
+            case 1:
+                document.addEventListener("mouseover", element[0])
+                break;
+
+            case 2:
+                element[0].addEventListener("mouseover", element[1])
+                break;
+
+            default:
+                element[0].addEventListener("mouseover", element[1], element[2])
+                break
+        }
     }
 
+    /*
+        HOW TO USE
+        DOM.onClick([(event) => {
+            ~ Your Code
+        }])
 
+        DOM.onClick([DOM.$("#shorting"), (event) => {
+            ~ Your Code
+        }])
+
+        DOM.onClick([DOM.$("#shorting"), (event) => {
+            ~ Your Code
+        }, true])
+    */
 }
-
 const DOM = new Dom();
-
-// DOM.$("#shorting").DOM.onClick(event => {console.log(event.target)});

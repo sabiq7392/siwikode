@@ -10,8 +10,8 @@
                     <th>No</th>
                     <th>Nama</th>
                     <th>Email</th>
-                    <th>Role</th>
-                    <th>Active</th>
+                    <th class="text-center">Role</th>
+                    <th class="text-center">Active</th>
                     <th>Option</th>
                 </tr>
             </thead>
@@ -20,8 +20,8 @@
                 foreach ($user as $row) : ?>
                     <tr id="<?= $row->id ?>">
                         <td><?= $no ?></td>
-                        <td><?= $row->username ?></td>
-                        <td><?= $row->email ?></td>
+                        <td class="text-left"><?= $row->username ?></td>
+                        <td class="text-left"><?= $row->email ?></td>
                         <?php if ($row->role_id == 1) :?>
                         <td>Admin</td>
                         <?php else :?>
@@ -32,8 +32,9 @@
                         <?php else :?>
                         <td>No</td>
                         <?php endif ?>
-                        <td>
-                            <a href="<?= base_url() ?>admin/edit_user_role/<?= $row->id ?>" class="btn btn-warning">Edit</a>
+                        <td class="text-dark">
+                            <a href="<?= base_url() ?>admin/edit_wisata/<?= $row->id ?>" class="btn btn-warning" title="edit"><i class="fas fa-edit"></i></a>
+                            <a data-url="admin/delete_wisata/" class="btn btn-danger delete" title="delete"><i class="fas fa-trash"></i></a>
                         </td>
                     </tr>
                 <?php $no++;

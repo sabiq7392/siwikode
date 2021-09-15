@@ -40,11 +40,11 @@ if(isset($_POST['username']) && isset($_POST['email']) && isset($_POST['password
                         <div class="form-group">
                             <label for="password" class="ourLabel labelMovingTop">Password</label> 
                             <div class="password">
-                                <input id="passwordRegistration" name="password" type="password" class="form-control ourInput" >
+                                <input id="password" name="password" type="password" class="form-control ourInput" >
                                 <checkbox class="checkbox">
-                                    <input type="checkbox" id="showRegistration">
-                                    <i class="fas fa-eye mata" id="mataRegistration"></i> 
-                                    <i class="fas fa-eye-slash buta" id="butaRegistration"></i>
+                                    <input type="checkbox" id="show">
+                                    <i class="fas fa-eye mata" id="mata"></i> 
+                                    <i class="fas fa-eye-slash buta" id="buta"></i>
                                 </checkbox>
                             </div>
                             <?= form_error('password', '<small class="text-danger formError">', '</small>')?>
@@ -52,7 +52,7 @@ if(isset($_POST['username']) && isset($_POST['email']) && isset($_POST['password
                         <!------------------>
                         <div class="form-group">
                             <label for="repeat_password" class="ourLabel">Repeat Password</label> 
-                            <input id="repeatPasswordRegistration" name="repeat_password" type="password" class="form-control ourInput">
+                            <input id="repeatPassword" name="repeat_password" type="password" class="form-control ourInput">
                             <?= form_error('repeat_password', '<small class="text-danger formError">', '</small>')?>
                         </div> 
                         <!------------------>

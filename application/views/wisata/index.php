@@ -105,15 +105,9 @@
                     <th class="text-center">No</th>
                     <th class="text-center">Image</th>
                     <th>Nama</th>
-                    <!-- <th>Deskripsi</th> -->
                     <th >Jenis</th>
                     <th>Kategori</th>
-                    <!-- <th>Fasilitas</th> -->
                     <th>Kontak</th>
-                    <!-- <th>Alamat</th> -->
-                    <!-- <th>Latlong</th> -->
-                    <!-- <th>Email</th>
-                    <th>URL</th> -->
                     <th>Action</th>
                 </tr>
             </thead>
@@ -123,17 +117,10 @@
                     <tr id="<?= $row->id ?>">
                         <td class="text-center"><?= $no ?></td>
                         <td><a href="<?= base_url('assets/img/photo_wisata/' . $row->image) ?>"><img src="<?= base_url('assets/img/photo_wisata/' . $row->image) ?>" alt="" width="80"></a></td>
-                        <!-- <td><a href="<?= base_url('assets/img/photo_wisata/' . $row->image) ?>"><?= $row->image ?></a></td> -->
                         <td><?= $row->nama_wisata ?></td>
-                        <!-- <td><details><?= $row->deskripsi ?></details></td> -->
                         <td><?= $row->jenis ?></td>
                         <td><?= $row->nama_kategori ?></td>
-                        <!-- <td><details><?= $row->fasilitas ?></details></td> -->
                         <td><?= $row->kontak ?></td>
-                        <!-- <td><details><?= $row->alamat ?></details></td> -->
-                        <!-- <td><?= $row->latlong ?></td> -->
-                        <!-- <td><?= $row->email ?></td> -->
-                        <!-- <td><a href="<?= $row->url ?>"><?= $row->url ?></a></td> -->
                         <td class="text-dark">
                             <a href="<?= base_url() ?>admin/detail_wisata/<?= $row->id ?>" class="btn btn-success" title="detail"><i class="fas fa-eye"></i></a>
                             <a href="<?= base_url() ?>admin/edit_wisata/<?= $row->id ?>" class="btn btn-warning" title="edit"><i class="fas fa-edit"></i></a>

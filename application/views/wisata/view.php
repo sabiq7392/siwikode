@@ -1,6 +1,6 @@
 <main class="wisata displayCenter noMax-width">
     <div class="detailTableContainer">
-        <di class="detailTable">
+        <div class="detailTable">
             <div class="detailTableRow">
                 <div>ID#</div>
                 <div><?= $wisataId->id?></div>
@@ -49,60 +49,6 @@
                 <div>URL</div>
                 <div><?= $wisataId->url ?></div>
             </div>
-        </di>
-        <!-- <table class="table-hover">
-            <tbody>
-                <tr>
-                    <td>ID#</td>
-                    <td><?= $wisataId->id ?></td>
-                </tr>
-                <tr>
-                    <td>Image</td>
-                    <td>
-                        <img src="<?= base_url('assets/img/photo_wisata/' . $wisataId->image) ?>" alt="" width="80">
-                    </td>
-                </tr>
-                <tr>
-                    <td>Nama</td>
-                    <td><?= $wisataId->nama_wisata?></td>
-                </tr>
-                <tr>
-                    <td>Deskripsi</td>
-                    <td><p><?= $wisataId->deskripsi?></p></td>
-                </tr>
-                <tr>
-                    <td>Jenis</td>
-                    <td><?= $jenis_wisata[$wisataId->jenis_wisata_id - 1]->jenis ?></td>
-                </tr>
-                <tr>
-                    <td>Kategori</td>
-                    <td><?= $kategori[$wisataId->kategori_id - 1]->nama_kategori ?></td>
-                </tr>
-                <tr>
-                    <td>Fasilitas</td>
-                    <td><p><?= $wisataId->fasilitas?></p></td>
-                </tr>
-                <tr>
-                    <td>Kontak</td>
-                    <td><?= $wisataId->kontak?></td>
-                </tr>
-                <tr>
-                    <td>Alamat</td>
-                    <td><?= $wisataId->alamat?></td>
-                </tr>
-                <tr>
-                    <td>Latlong</td>
-                    <td><?= $wisataId->latlong ?></td>
-                </tr>
-                <tr>
-                    <td>Email</td>
-                    <td><?= $wisataId->email?></td>
-                </tr>
-                <tr>
-                    <td>URL</td>
-                    <td><?= $wisataId->url ?></td>
-                </tr>
-            </tbody>
-        </table> -->
+        </div>
     </div>
 </main>

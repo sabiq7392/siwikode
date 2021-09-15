@@ -102,10 +102,6 @@
   <!-- sidebar-wrapper -->
   <!-- Page Content -->
   <nav class="navbar navbar-expand-lg" id="navbar">
-    <!-- <button class="btn menu-toggle" id="menu-toggle">
-      <i id="iconMenuToggle" class="fas fa-bars"></i>
-    </button> -->
-
     <header class="welcome-user">
       <h6>Welcome, <span><?= $user['username'] ?></span></h6>
     </header>

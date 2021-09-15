@@ -49,12 +49,12 @@
         </menuCreate>
     </floatingElement>
     <!------------------>
-    <div class="table-responsive table-wrapper">
-        <section class="tableHeader">
+    <div class="table-wrapper">
+        <header class="tableHeader">
             <h2>Menu</h2>
-        </section>
+        </header>
         <br>
-        <table class="table-striped table-bordered">
+        <table class="table-striped table-hover">
             <thead class="tableHead">
                 <tr>
                     <th>No</th>
@@ -73,10 +73,10 @@
                         <td><?= $row->title ?></td>
                         <td><?= $row->url ?></td>
                         <td><?= $row->icon ?></td>
-                        <td><?= $row->menu ?></td>
-                        <td>
-                            <a href="<?= base_url('admin/edit_menu/') ?><?= $row->id ?>" class="btn btn-warning">Edit</a>
-                            <a data-url="admin/delete_menu/" class="btn btn-danger delete">Delete</a>
+                        <td class="text-center"><?= $row->menu ?></td>
+                        <td class="text-dark">
+                            <a href="<?= base_url() ?>admin/edit_wisata/<?= $row->id ?>" class="btn btn-warning" title="edit"><i class="fas fa-edit"></i></a>
+                            <a data-url="admin/delete_wisata/" class="btn btn-danger delete" title="delete"><i class="fas fa-trash"></i></a>
                         </td>
                     </tr>
                 <?php $no++;
